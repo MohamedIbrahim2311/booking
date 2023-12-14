@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:mylastapp/component/component.dart';
 import 'package:mylastapp/layout/home_layout.dart';
 import 'dart:async';
 
@@ -475,7 +476,8 @@ class _RestaurantState extends State<Restaurant> {
                          height: 400,
                          child:  GoogleMap(
                            mapType: MapType.hybrid,
-                           initialCameraPosition: kGooglePlex,                          onMapCreated: (GoogleMapController controller) {
+                           initialCameraPosition: kGooglePlex,
+                           onMapCreated: (GoogleMapController controller) {
                              controller0.complete(controller);
                            },
                          ),
@@ -483,6 +485,31 @@ class _RestaurantState extends State<Restaurant> {
                      ),
                    ],
                  ),
+                Row(
+                  children: [
+                    Text(
+                      "Apply",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(width: 16), // مساحة فارغة بين النص والزر
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //       },
+                    //
+                    //   child: Text("Apply"),
+                    // ),
+                    custumButton(
+                      color: Colors.black,
+                        text: 'Apply',
+                        onPressed: (){
+
+                        },
+                    )
+                  ],
+                )
               ],
             ),
           ),
